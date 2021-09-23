@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Made4You</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="right-side-menu">
+          <div class="sub-menu">
+            <a href="#">
+              <li>Home</li>
+              <a href="#section-two">
+                <li>About us</li>
+              </a>
+              <a href="#section-third">
+                <li>Services</li>
+              </a>
+              <a href="#section-five">
+                <li>Contact us</li>
+            </a>
+        </div>
+      </nav>
+    </header>
+    <body style="background-color:powderblue;">
+      <section class="main-hero-section">
+      <div class="hero-left-side">
+        <h1>Made4You</h1>
+        <p>
+            Digital service provider that aims to provide software,
+            designing and marketing solutions
+        </p>
+        <div class="hero-right-side">
+          <img src="images/ww.png"  />
+        </div>
+    </section>
+<hr>
+    <!-- --------------About us ---------------- -->
+    <section class="common-section" id="section-two">
+      <!-- left side of section 2  -->
+      <div class="left-side">
+        <figure>
+          <img src="images/about.png" alt="section2" />
+        </figure>
+      </div>
+
+      <!-- right side of section 2  -->
+      <div class="right-side">
+        <p>
+          M4Y is a digital service provider that aims to provide software designing and marketing solutions to individuals and businesses. At M4Y We believe that service and quality is the key to success. Founded and Funded by Graphic designers from Jahirathu Junction, M4Y has now set a new path towards Digital Solutions
+        </p>
+      </div>
+    </section>
+<hr>
+    <!-- ----------- Services-------- -->
+    <section class="section-third" id="section-third">
+      <h2>Services</h2>
+      <p> We believe that service and quality is the key to success</p>
+      <div class="section-third-task">
+        <div class="task-1">
+          <img src="images/1.png" alt="icon1" />
+          <h3>Development</h3>
+          <p>
+            We develop responsive, functional and super-fast websites.
+            A website should load quickly and should be accessible even on slow internet connection
+          </p>
+        </div>
+        <div class="task-2">
+          <img src="images/22.png" alt="icon1" />
+          <h3>Consultancy</h3>
+          <p>
+            We are here to provide you with expert advice on your design and
+            development requirements.
+          </p>
+        </div>
+        <div class="task-3">
+          <img src="images/sectionIcon3.png" alt="icon1" />
+          <h3>Videos</h3>
+          <p>
+            We create a polished professional video that impresses your audience
+          </p>
+        </div>
+      </div>
+    </section>
+<hr>
+    <!-- -----Contact us -->
+    <section class="common-section2" id="section-five">
+      <div class="left-side">
+        <img src="images/8.png" alt="section5" />
+      </div>
+      <div class="right-side">
+        <h2>Contact us</h2>
+        <p> We would love to hear from you ❤️ </p>
+     <div class="container">
+      <form action="javascript:sendmail()" method="post">
+       <label for="name">Name</label>
+       <input type="text" class="form-control" name="Name" id="Name" placeholder="Enter Your Name" required="">
+       <label for="number">Phone Number</label>
+       <input type="text" class="form-control" name="number" id="phonenumber" placeholder="Enter Your Number" required="">
+       <label for="mail">Gmail</label>
+      <input type="text" class="form-control" name="email" id="mail" placeholder="Enter Your Email" required="">
+    </select>
+    <textarea id="subject" name="subject" placeholder="Write something.." required="" style="height:200px"></textarea>
+    <input type="submit" value="Submit">
+       </form>
+      </div>
+    </section>
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  crossorigin="anonymous"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>  
+
+     function sendmail(){
+    
+			var Name = $('#Name').val();
+			var number = $('#phonenumber').val();
+			var email = $('#mail').val();
+      var subject = $('#subject').val();
+
+			var Body='Name: '+Name+'<br>Phonenumber: '+number+'<br>Mail: '+email+'<br>Subject: '+subject;
+
+			Email.send({
+        SecureToken:"fbf31702-bb7f-4a4e-9c1c-4ccf17ee777f",
+				To: 'ankithgowda24@gmail.com',
+				From: "made4youContactus@gmail.com",
+				Subject: "New message on contact from "+name,
+				Body: Body
+			}).then(
+				message =>{
+					if(message=='OK'){
+					alert('Thank you for contacting.');
+					}
+					else{
+						console.error (message);
+						alert('There is error at sending message. ')
+					}
+				}
+			);
+		}
+ </script>
+    <footer>
+        <div class="footer-div-1">
+          <br>
+          <h3>Made4You@2021</h3>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-instagram"></a>   
+      </div>
+    </footer>
+  </body>
+</html>
